@@ -11,5 +11,4 @@ class ApplicationController < ActionController::Base
 			redirect_to login_url
 		end
 	end
-	config.action_view.embed_authenticity_token_in_remote_forms = true
 end
