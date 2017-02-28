@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Order Layout</title>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+</head>
+<body>
+	
+	<div class="container">
+		<em>TBD</em>
+		<% flash.each do |message_type, message| %>
+		<%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+		<% end %>
+
+		<%= yield %>
+
+	</div>
+</body>
+</html>

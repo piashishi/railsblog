@@ -1,0 +1,16 @@
+<li >
+	<span >
+		Good:<%= order.OrderID %>
+	</span>
+	<span >
+		Price:<%= order.price %>
+
+	</span>
+	<span >
+		Number:<%= order.number %>
+	</span>
+	<span >
+		Date:<%= order.date %>
+	</span>
+	<%= link_to "delete",  order , method: :delete, data:{ confirm: "Are you sure?" } %>
+</li>

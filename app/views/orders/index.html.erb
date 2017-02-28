@@ -1,0 +1,16 @@
+	<h1>My order</h1>
+<!-- 1th render -->
+<!-- 	<% @orders.each do |order| %>
+	<%= render partial: "order", locals: { order: order } %>
+	<% end %> -->
+<!-- 2th render -->
+<!-- 	<%= render partial: "order", collection: @orders %> -->
+
+<!-- 3th render -->
+<%= render @orders %>
+
+<p>Want more? 
+<!-- looks link_to can't send post method,even method was set to post -->
+<%= link_to "Click Here",  {action: "create"},  method: :post %> 
+<%#= button_to "Click Here", { action: "create" }, method: :post %>
+</p>
