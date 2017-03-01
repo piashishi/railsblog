@@ -1,11 +1,11 @@
 class OrdersController < ApplicationController
 	def index
-		@orders = Order.find(current_user.name)
+		@orders = Order.find_by(user: current_user.name)
 	end
 
 	def create
 		logger.debug("Create Order")
-		@order = Order.new(OrderID: 7788, number:10, price:120,date: DateTime.current)
+		@order = Order.new(OrderID: 7788, number:10, price:120, date: DateTime.current, user: current_user.name)
 		if @order.save()
 			logger.debug "save success"
 		else
