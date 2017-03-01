@@ -1,0 +1,9 @@
+<% if current_user.admin? %>
+<%= link_to "Add product", new_product_path %>
+<% end %>
+
+<% if @products %>
+	<p>1111</p>
+	<%= render @products %>
+<% end %>
+
