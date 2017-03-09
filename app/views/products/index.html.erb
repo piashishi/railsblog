@@ -1,8 +1,27 @@
+<div class="pcontainer">
+	<div class="category">
+		<ul>
+			<li><%= link_to 'Item1', '#' %></li>
+			<li><%= link_to 'Item2', '#' %></li>
+			<li><%= link_to 'Item3', '#' %></li>
+			<li><%= link_to 'Item4', '#' %></li>
+		</ul>
+	</div>
+	<div class="content">
+		<div class="bar">
+			<span>sort</span>
+			<span>search</span>
+			<span id="addproduct">
 <% if current_user.admin? %>
 <%= link_to "Add product", new_product_path %>
 <% end %>
-
+			</span>
+		</div>
+		<div class="products">
 <% if @products %>
 	<%= render @products %>
 <% end %>
+		</div>
+	</div>
+</div>
 
