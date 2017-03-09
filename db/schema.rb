@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170301085228) do
+ActiveRecord::Schema.define(version: 20170309094958) do
 
   create_table "microposts", force: :cascade do |t|
     t.text     "content"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20170301085228) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.integer  "ProductID"
+    t.integer  "PID"
     t.float    "price"
     t.string   "description"
     t.datetime "created_at",         null: false

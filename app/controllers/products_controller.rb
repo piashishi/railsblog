@@ -39,7 +39,7 @@ class ProductsController < ApplicationController
 	end
 private
 	def product_params
-		params.require(:product).permit(:price, :description, :ProductId, :image)
+		params.require(:product).permit(:price, :description, :PID, :image)
 	end
 
 end
