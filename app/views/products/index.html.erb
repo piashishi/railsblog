@@ -9,11 +9,12 @@
 	</div>
 	<div class="content">
 		<div class="bar">
-			<span>sort</span>
-			<span>search</span>
-			<span id="addproduct">
+			<span class="bar" id="comments">Comments</span>
+			<%= render 'priceFilter' %>
+			<span class="bar" id="search">search</span>
 <% if current_user.admin? %>
-<%= link_to "Add product", new_product_path %>
+<!--  button_to can't sent get, change to link_to !> -->
+<%= link_to "Add product", { :action => 'new'},  { :class=>"bar", :id=>"addproduct" } %>
 <% end %>
 			</span>
 		</div>

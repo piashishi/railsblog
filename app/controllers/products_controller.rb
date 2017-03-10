@@ -14,8 +14,7 @@ class ProductsController < ApplicationController
 			logger.debug "add product ok"
 			redirect_to products_path
 		else
-			@feed_items = []
-			render 'static_pages/home'
+			render 'new'
 		end
 	end
 

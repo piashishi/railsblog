@@ -3,13 +3,13 @@
 		<%= link_to image_tag(product.image.url,  :size => "260x180"), product.image.url, target: '_blank' %>
 	</li>
 	<li>
-		<span>ID:<%= product.PID  %></span>
+		<span class="text">ID:<%= product.PID  %></span>
 	</li>
 	<li>
-		<span>Price:<%= product.price %></span>
+		<span class="text">Price:<%= product.price %></span>
 	</li>
 	<li>
-		<span>Description:<%= product.description %></span>
+		<span class="text">Description:<%= product.description %></span>
 	</li>
 	<% if current_user.admin? %>
 	<li>

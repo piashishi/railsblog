@@ -14,17 +14,34 @@
     border: 1px solid gray;
 }
 .bar {
-    margin-left: 10px;
+    margin-left: 2px;
     height:40px;
+    width: 700px;
     padding: 1em;
-    overflow: hidden;
+    display:inline-block;
 }
 .product {
 	float: left;
 }
+
 li {
 	list-style-type: none;
 }
 #addproduct {
-	float: right;
+    width: 20%;
+}
+#comments {
+    width: 10%;
+}
+#search{
+   width: 10%; 
+}
+#pricelabel {
+    width: 8%;
+}
+#priceStart {
+    width: 15%;
+}
+#priceEnd {
+    width: 15%; 
 }
