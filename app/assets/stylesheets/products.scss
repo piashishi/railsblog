@@ -1,47 +1,93 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.pcontainer {
-	width: 100%;
-    display: -ms-flex; 
-    display: -webkit-flex; 
-    display: flex;
-}
+
 .category {
 	float: left;
-    width: 320px;
+    width: 20%;
     text-align: left;
     border: 1px solid gray;
 }
-.bar {
-    margin-left: 2px;
-    height:40px;
-    width: 700px;
-    padding: 1em;
-    display:inline-block;
-}
-.product {
-	float: left;
+
+.content {
+    float: left;
+    width: 80%;
 }
 
+.bar {
+    margin-left: 2px;
+    height:80px;
+    width: 80%;
+    padding: 1em;
+}
+
+.product {
+    float: left;
+}
+
+#comments{
+    float: left;
+    width: 15%;
+}
+
+#price {
+    float: left;
+    width: 60%;
+}
+
+#addproduct {
+    float: left;
+    width: 25%;
+}
+
+.priceFilter {
+    margin-left: 2px;
+}
+#priceLabel {
+    float: left;
+    width:15%;
+
+}
+#priceLow {
+    float: left;
+    width: 20%;
+
+}
+#priceHigh {
+    float: left;
+    width: 20%;
+    
+}
+#priceSearch {
+    float: left;
+    width: 20%;
+}
 li {
 	list-style-type: none;
 }
-#addproduct {
-    width: 20%;
+
+.sub-catagory {
+    background-color: #1e485d;
+    border-bottom-style: dashed;
+
 }
-#comments {
-    width: 10%;
+.sub-catagory :hover {
+    background-color: #3c4d6a;
 }
-#search{
-   width: 10%; 
+
+.sub-catagory span {
+    color: white;
 }
-#pricelabel {
-    width: 8%;
+
+.subject {
+    height:30px;
 }
-#priceStart {
-    width: 15%;
+.sub_subject {
+    font-size: 120%;
 }
-#priceEnd {
-    width: 15%; 
+.details {
+    float:right;
+    margin-right: 2px;
 }
+
+

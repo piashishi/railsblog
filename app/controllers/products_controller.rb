@@ -1,6 +1,12 @@
 class ProductsController < ApplicationController
 	def index
-		@products = Product.all
+		low = params[:low]
+		high = params[:high]
+		if low && high
+			@products = Product.where(:price=>low..high)
+		else
+			@products = Product.all
+		end
 	end
 
 	def new
@@ -11,7 +17,6 @@ class ProductsController < ApplicationController
 		@product = Product.new(product_params)
 		if @product.save
 			flash[:success] = "Add Product successfully!"
-			logger.debug "add product ok"
 			redirect_to products_path
 		else
 			render 'new'
@@ -27,6 +32,7 @@ class ProductsController < ApplicationController
 	def edit
 		@product = Product.find(params[:id])
 	end
+	
 	def update
 		@product = Product.find(params[:id])
 		if @product.update_attributes(product_params)
@@ -36,6 +42,7 @@ class ProductsController < ApplicationController
 			render 'edit'
 		end
 	end
+
 private
 	def product_params
 		params.require(:product).permit(:price, :description, :PID, :image)

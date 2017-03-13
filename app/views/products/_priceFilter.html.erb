@@ -1,3 +1,10 @@
-<span class="bar" id="pricelabel">Price</span>
-<%= number_field(:product, :price, in: 1.0..20.0, step: 0.5, :class=>"bar", :id=>"priceStart") %>
-<%= number_field(:product, :price, in: 1.0..20.0, step: 0.5, :class=>"bar", :id=>"priceEnd") %>
+<!-- <span class="bar" id="pricelabel">Price</span> -->
+<%#= number_field(:product, :price, in: 1.0..20.0, step: 0.5, :class=>"bar", :id=>"priceStart") %>
+<%#= number_field(:product, :price, in: 1.0..20.0, step: 0.5, :onchange => "myhand();" ,:class=>"bar", :id=>"priceEnd") %>
+<%= form_tag("/products", :method => "get") do %>
+<%= label_tag  "price", nil, :class=>"priceFilter", :id=>"priceLabel" %>
+<%= number_field_tag 'low', nil, :class=>"priceFilter", :id=>"priceLow" %>
+<%= number_field_tag 'high', nil, :class=>"priceFilter", :id=>"priceHigh" %>
+<%= submit_tag "Search", :class=>"priceFilter", :id=>"priceSearch" %>
+<% end %>
+

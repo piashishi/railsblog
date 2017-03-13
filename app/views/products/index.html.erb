@@ -1,28 +1,55 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+     $(".subject").hover(function(){
+     	 $(this).css("background-color", "#1e485d");
+         $(this).siblings().css("background-color", "#1e485d");
+     },
+     function(){
+     	 $(this).css("background-color", "#3c4d6a");
+         $(this).siblings().css("background-color", "#3c4d6a");
+     });
+     $(".sub_subject").hover(function(){
+     	 $(this).css("background-color", "#1e485d");
+         $(this).siblings().css("background-color", "#1e485d");
+     },
+     function(){
+     	 $(this).css("background-color", "#3c4d6a");
+         $(this).siblings().css("background-color", "#3c4d6a");
+     });
+});
+</script>
+
+
 <div class="pcontainer">
 	<div class="category">
-		<ul>
-			<li><%= link_to 'Item1', '#' %></li>
-			<li><%= link_to 'Item2', '#' %></li>
-			<li><%= link_to 'Item3', '#' %></li>
-			<li><%= link_to 'Item4', '#' %></li>
-		</ul>
-	</div>
-	<div class="content">
-		<div class="bar">
-			<span class="bar" id="comments">Comments</span>
-			<%= render 'priceFilter' %>
-			<span class="bar" id="search">search</span>
-<% if current_user.admin? %>
-<!--  button_to can't sent get, change to link_to !> -->
-<%= link_to "Add product", { :action => 'new'},  { :class=>"bar", :id=>"addproduct" } %>
-<% end %>
-			</span>
+		<div class="sub-catagory computer">
+			<%= render "computer" %>
 		</div>
-		<div class="products">
-<% if @products %>
+		<div class="sub-catagory Novel">
+			<%= render "novel" %>
+		</div>
+		<div class="sub-catagory Others">
+			<%= render "others" %>
+		</div>
+	</ul>
+</div>
+<div class="content">
+	<div class="bar">
+		<span id="comments">Comments</span>
+		<div id="price"><%= render 'priceFilter' %></div>
+		<% if current_user.admin? %>
+		<!--  button_to can't sent get, change to link_to !> -->
+		<span id="addproduct">
+			<%= link_to "Add product", { :action => 'new'} %>
+			<% end %>
+		</span>
+	</span>
+</div>
+<div class="products">
+	<% if @products %>
 	<%= render @products %>
-<% end %>
-		</div>
-	</div>
+	<% end %>
+</div>
+</div>
 </div>
 
