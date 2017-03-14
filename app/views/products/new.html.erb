@@ -1,7 +1,8 @@
 <% provide(:title, 'Add product') %>
 <h1>Add product</h1>
 <div class="row">
-<!-- need do input validation -->
+	<!-- need do input validation -->
+
 	<div class="col-md-6 col-md-offset-3">
 		<%= form_for(@product) do |f| %>
 		<%= render 'shared/error_messages', object: f.object %>
@@ -11,7 +12,15 @@
 		<%= f.text_field :PID , class: 'form-control' %>
 		<%= f.label :description %>
 		<%= f.text_field :description, class: 'form-control' %>
-
+		<%= f.label "Tags" %>
+		<div class="tags">
+			<span class="tag">Computer:</span>
+			<%= f.check_box :tag, { :multiple => true, :class=>'form-control tag cb' }, 'Computer', nil %>
+			<span class="tag">Novel:</span>
+			<%= f.check_box :tag, { :multiple => true ,:class=>'form-control tag cb' }, 'Novel', nil %>
+			<span class="tag">Others:</span>
+			<%= f.check_box :tag, { :multiple => true ,:class=>'form-control tag cb'}, 'Others', nil %>
+		</div>
 		<div class="form-group">
 			<%= f.label :image %>
 			<%= f.file_field :image, class: 'form-control' %>

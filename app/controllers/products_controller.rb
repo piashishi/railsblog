@@ -2,10 +2,13 @@ class ProductsController < ApplicationController
 	def index
 		low = params[:low]
 		high = params[:high]
+		tag = params[:tags]
 		if low && high
 			@products = Product.where(:price=>low..high)
+		elsif tag
+			@products = Product.find_by_sql("SELECT * from products where '#{tag}' in tag")
 		else
-			@products = Product.all
+			@products  = Product.all
 		end
 	end
 
@@ -45,7 +48,7 @@ class ProductsController < ApplicationController
 
 private
 	def product_params
-		params.require(:product).permit(:price, :description, :PID, :image)
+		params.require(:product).permit(:price, :description, :PID, :image, tag:[])
 	end
 
 end

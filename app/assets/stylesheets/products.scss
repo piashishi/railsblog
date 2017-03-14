@@ -67,12 +67,8 @@ li {
 }
 
 .sub-catagory {
-    background-color: #1e485d;
-    border-bottom-style: dashed;
-
-}
-.sub-catagory :hover {
     background-color: #3c4d6a;
+    border-bottom-style: dashed;
 }
 
 .sub-catagory span {
@@ -88,6 +84,27 @@ li {
 .details {
     float:right;
     margin-right: 2px;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+
+.tags {
+    height:30px;
+}
+.tag{
+    float: left;
+}
+
+.cb{
+    width:20px;
 }
 
 

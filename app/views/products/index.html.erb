@@ -1,22 +1,23 @@
 <script type="text/javascript">
-  $(document).ready(function(){
-     $(".subject").hover(function(){
-     	 $(this).css("background-color", "#1e485d");
-         $(this).siblings().css("background-color", "#1e485d");
-     },
-     function(){
-     	 $(this).css("background-color", "#3c4d6a");
-         $(this).siblings().css("background-color", "#3c4d6a");
-     });
-     $(".sub_subject").hover(function(){
-     	 $(this).css("background-color", "#1e485d");
-         $(this).siblings().css("background-color", "#1e485d");
-     },
-     function(){
-     	 $(this).css("background-color", "#3c4d6a");
-         $(this).siblings().css("background-color", "#3c4d6a");
-     });
-});
+	$(document).ready(function(){
+		$(".subject").hover(function(){
+			$(this).css("background-color", "#1e485d");
+			$(this).siblings().css("background-color", "#1e485d");
+		},
+		function(){
+			$(this).css("background-color", "#3c4d6a");
+			$(this).siblings().css("background-color", "#3c4d6a");
+		});
+		// Sublist hover
+		$(".subject_list").hover(function(){
+			$(this).css("background-color", "#1e485d");
+			$(this).siblings().css("background-color", "#1e485d");
+		},
+		function(){
+			$(this).css("background-color", "#3c4d6a");
+			$(this).siblings().css("background-color", "#3c4d6a");
+		});
+	});
 </script>
 
 
@@ -31,25 +32,23 @@
 		<div class="sub-catagory Others">
 			<%= render "others" %>
 		</div>
-	</ul>
-</div>
-<div class="content">
-	<div class="bar">
-		<span id="comments">Comments</span>
-		<div id="price"><%= render 'priceFilter' %></div>
-		<% if current_user.admin? %>
-		<!--  button_to can't sent get, change to link_to !> -->
-		<span id="addproduct">
-			<%= link_to "Add product", { :action => 'new'} %>
+	</div>
+	<div class="content">
+		<div class="bar">
+			<span id="comments">Comments</span>
+			<div id="price">
+				<%= render 'priceFilter' %>
+			</div>
+			<% if current_user.admin? %>
+			<!--  button_to can't sent get, change to link_to !> -->
+			<%= link_to "Add product", { :action => 'new'} ,:id=>"addproduct"%>
 			<% end %>
-		</span>
-	</span>
-</div>
-<div class="products">
-	<% if @products %>
-	<%= render @products %>
-	<% end %>
-</div>
-</div>
+		</div>
+		<div class="products">
+			<% if @products %>
+			<%= render @products %>
+			<% end %>
+		</div>
+	</div>
 </div>
 

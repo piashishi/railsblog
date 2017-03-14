@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170309094958) do
+ActiveRecord::Schema.define(version: 20170314071116) do
 
   create_table "microposts", force: :cascade do |t|
     t.text     "content"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20170309094958) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "tag"
   end
 
   create_table "relationships", force: :cascade do |t|
